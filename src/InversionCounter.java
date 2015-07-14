@@ -3,7 +3,11 @@ import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.Scanner;
 
-
+/**
+ * This program serves to count inversions in a certain array by using divide-and-conquer method and brute force method.
+ * @author Tang
+ *
+ */
 public class InversionCounter {
 	
 	
@@ -69,6 +73,11 @@ public class InversionCounter {
 		
 	}
 	
+	/**
+	 * Using brute force to count inversions
+	 * @param array
+	 * @return
+	 */
 	public static <E extends Comparable<E>> long BruteForceCounter(E[] array){
 		long counter = 0;
 		for (int i = 0; i < array.length; i++){
@@ -104,9 +113,6 @@ public class InversionCounter {
 		}
 		
 		Integer[] array = new Integer[prearray.size()];
-		System.out.println(prearray.size());
-		System.out.println(array.length);
-		
 		for (int i = 0; i < prearray.size(); i++){
 			array[i] = prearray.get(i);
 		}
