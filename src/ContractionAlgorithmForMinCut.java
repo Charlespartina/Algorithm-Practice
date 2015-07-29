@@ -2,7 +2,11 @@ import java.io.File;
 import java.util.ArrayList;
 import java.util.Scanner;
 
-
+/**
+ * This is a randomized contraction algorithm for the min cut problem.
+ * @author Tang
+ */
+  
 public class ContractionAlgorithmForMinCut {
 	public class Vertex{
 		int label;
