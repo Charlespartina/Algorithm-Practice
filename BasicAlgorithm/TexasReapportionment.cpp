@@ -25,5 +25,5 @@ int MaxRvalue(int j){
 int main(){
 	// Initialize a lookup table with -1 for all entries.
 	memset(lookup, -1, sizeof(lookup)); 
-	MaxRvalue(n);
+	int result = MaxRvalue(n);
 }
