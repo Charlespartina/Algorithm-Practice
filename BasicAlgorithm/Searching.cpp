@@ -21,7 +21,6 @@ int findMinIdx(int l, int r, int rm){
 			// so we include it into the next recursion
 	}
 }
-
 // Binary Search
 int binsearch(int i, int j, int key){
 	if (i > j)
