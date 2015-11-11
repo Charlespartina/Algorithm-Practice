@@ -45,10 +45,6 @@ void iter_quicksort(int L, int U){
 		swap(&A[l], &A[right]);
 		record.push(make_pair(l, right-1));
 		record.push(make_pair(right+1, u));
-		for (int i = 0; i <= U; i++){
-			printf("%d ", A[i]);
-		}
-		cout << endl;
 	}
 
 

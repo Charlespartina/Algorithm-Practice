@@ -26,7 +26,7 @@ int IMergeSort(int i, int j){
 			k2++;
 			idx++;
 			sum += mid-k1+1; 
-			// When copying an element from right array,
+			// When copying an element from right subarray,
 			// the number of inversion is 
 			// all remaining elements in the left subarray
 		}
