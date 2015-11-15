@@ -19,8 +19,7 @@ public class MedianMaintenance {
 		PriorityQueue<Integer> low = new PriorityQueue<>(10, Collections.reverseOrder());
 		try {
 			
-			File fileinput = new File(args[0]);
-			Scanner fileScanner = new Scanner(fileinput);
+			Scanner fileScanner = new Scanner(System.in);
 			while(fileScanner.hasNext()){
 				String line = fileScanner.nextLine();
 				Integer num = Integer.parseInt(line);
