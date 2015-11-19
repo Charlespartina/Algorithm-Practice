@@ -26,6 +26,9 @@ int rec(int sum, int bm){
 			if(((1 << i) & bm) != 0)
 				continue;
 			yes |= rec(sum-i,bm | (1<<i));
+			if(yes){
+				break;
+			}
 		}
 		return dp[sum][bm] = yes;
 	}
