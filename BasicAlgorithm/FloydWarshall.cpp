@@ -20,10 +20,10 @@ void printPath(int sta, int ter){
 int main(){
 	// Initialize the grid
 	int n,m,tmp;
-	cin >> n >> m; // The number of vertices and edges
+	while(cin >> n >> m){ // The number of vertices and edges
 	REP(i,0,n) REP(j,0,n){
 		if(i == j){
-			grid[i][j] = 0;
+			grid[i][j] = INF;
 			recovery[i][j] = 0;
 		}
 		else{
@@ -45,12 +45,19 @@ int main(){
 			recovery[i][j] = k; // Record the intermidiate vertex
 		}
 	}
-	int a,b;
-	cin >> a >> b;
-	if(recovery[a][b]!= INF){
-		printPath(a,b); // Print the path [a,b)
-		cout << b << endl;
+	REP(i,0,n){
+		REP(j,0,n){
+			cout << grid[i][j] << " ";
+		}
+		cout << endl;
 	}
-
+	cout << endl;
+	// int a,b;
+	// cin >> a >> b;
+	// if(recovery[a][b]!= INF){
+	// 	printPath(a,b); // Print the path [a,b)
+	// 	cout << b << endl;
+	// }
+}
 	return 0;
 }

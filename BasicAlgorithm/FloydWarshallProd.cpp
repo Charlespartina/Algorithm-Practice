@@ -13,7 +13,7 @@ int main(){
 	while(cin >> n >> m){ // The number of vertices and edges
 	REP(i,0,n) REP(j,0,n){
 		// Set each vertex's self-distance as 1 instead of 0
-		grid[i][j] =  -INF;
+		grid[i][j] =  INF;
 	}
 	int sta, ter, cost; // Starting point and ending point
 	REP(i,0,m){
@@ -21,10 +21,10 @@ int main(){
 		grid[sta][ter] = cost;
 	}
 	REP(k,0,n) REP(i,0,n) REP(j,0,n){
-		if(grid[i][k] == -INF || grid[k][j] == -INF)
+		if(grid[i][k] == INF || grid[k][j] == INF)
 			continue;
 		// Find the longest edge out of the two edges
-		if(grid[i][k]*grid[k][j] > grid[i][j])
+		if(grid[i][k]*grid[k][j] < grid[i][j])
 			grid[i][j] = grid[i][k]*grid[k][j];
 	}
 

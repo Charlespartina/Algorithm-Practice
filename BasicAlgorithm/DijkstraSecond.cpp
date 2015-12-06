@@ -37,6 +37,7 @@ const int dir[4][2] = {{-1,0},{0,1},{1,0},{0,-1}};
 vvpi all;
 priority_queue<pi, vpi, greater<pi> > pq;
 int dis[MAXN];
+int dis2[MAXN];
 int source = -1;
 
 int main(){
@@ -45,7 +46,7 @@ int main(){
 	// Clear
 	all.clear();
 	REP(i,0,n){
-		dis[i] = INF;
+		dis[i] = dis2[i] = INF;
 	}
 	while(!pq.empty()){
 		pq.pop();
@@ -70,23 +71,33 @@ int main(){
 		pi now = pq.top(); pq.pop();
 		int d = now.first; 
 		int u = now.second;
-		if(d > dis[u])
+		if(d > dis2[u])
 			continue;
 		int nsz = all[u].size();
 		REP(i,0,nsz){
 			pi tmp = all[u][i];
-			int newlength = max(dis[u], tmp.second);
-			if(newlength < dis[tmp.first]){
-				dis[tmp.first] = newlength;
+			if(dis[u] + tmp.second < dis[tmp.first]){
+				dis2[tmp.first] = dis[tmp.first];
+				dis[tmp.first] = dis[u] + tmp.second;
 				pq.push(make_pair(dis[tmp.first], tmp.first));
+			}
+			else if(dis[u] + tmp.second >= dis[tmp.first] && dis[u] + tmp.second < dis2[tmp.first]){
+				dis2[tmp.first] = dis[u] + tmp.second;
+				pq.push(make_pair(dis2[tmp.first], tmp.first));
 			}
 		}
 	}
 
-	// //Test
-	// REP(i,0,n){
-	// 	cout << dis[i] << endl;
-	// }
-	// //Test
+	// Test
+	REP(i,0,n){
+		cout << dis[i] << endl;
+	}
+	REP(i,0,n){
+		cout << dis2[i] << endl;
+	}
+
+	
+
+
 	return 0;
 }

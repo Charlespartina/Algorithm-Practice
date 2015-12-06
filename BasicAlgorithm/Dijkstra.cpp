@@ -70,8 +70,8 @@ int main(){
 		pi now = pq.top(); pq.pop();
 		int d = now.first; 
 		int u = now.second;
-		if(d > dis[u])
-			continue;
+		// if(d > dis[u])
+		// 	continue;
 		int nsz = all[u].size();
 		REP(i,0,nsz){
 			pi tmp = all[u][i];
@@ -83,9 +83,9 @@ int main(){
 	}
 
 	// Test
-	// REP(i,0,n){
-	// 	cout << dis[i] << endl;
-	// }
+	REP(i,0,n){
+		cout << dis[i] << endl;
+	}
 	
 
 
