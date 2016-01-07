@@ -1,3 +1,4 @@
+// Loop over start and end points in order. Keep a counter.
 /**
  * Definition for an interval.
  * struct Interval {
