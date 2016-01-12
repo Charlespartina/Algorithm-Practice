@@ -1,9 +1,9 @@
 typedef unsigned long long ull;
 class TrieNode {
 public:
-        bool end;
-        TrieNode* child[26];
-        ull prefix_count;
+    bool end;
+    TrieNode* child[26];
+    ull prefix_count;
     // Initialize your data structure here.
     TrieNode() {
         for(int i = 0; i < 26; i++){
