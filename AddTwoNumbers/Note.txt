@@ -1,7 +1,0 @@
-1. Node a = new Node();
-   Node b = a.next;  <The b is null>
-   a.next = new Node();
-
-   !!At this time, the node b is still NULL!!
-
-2. When computing the sum of certain pair of digits with the pop "1" from the previous pair of digits, first sum these digits and add the "1" before determining whether poping a "1" to the next pair of digits. 
